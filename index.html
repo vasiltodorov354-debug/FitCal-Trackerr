@@ -6,41 +6,58 @@
     <title>ФитКал Тракер</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="min-h-screen bg-slate-950 text-slate-100">
-    <div class="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-8">
-      <header class="flex flex-col gap-6 rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 p-6 shadow-xl">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="text-xs uppercase tracking-[0.35em] text-emerald-300/80">Седмичен план</p>
-            <h1 class="mt-2 text-3xl font-semibold text-white sm:text-4xl">ФитКал Тракер</h1>
-            <p class="mt-2 text-slate-300">Следи тренировъчния си график и прогрес.</p>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <button
-              id="reset-button"
-              class="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-300/30 transition hover:bg-emerald-400/20"
-              type="button"
-            >
-              <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  d="M4.75 5.75a.75.75 0 0 1 1.5 0v.69l.22-.22a6.5 6.5 0 1 1-1.06 7.59.75.75 0 0 1 1.37-.59 5 5 0 1 0 .73-5.94l.2-.2h.69a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1-.75-.75V5.75Z"
-                />
-              </svg>
-              Изчисти отметките
-            </button>
-          </div>
+  <body class="bg-slate-950 text-slate-100 min-h-screen">
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <header
+        class="flex flex-col gap-6 rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-xl sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-xs uppercase tracking-[0.35em] text-emerald-300/80">Седмичен план</p>
+          <h1 class="mt-2 text-3xl font-bold text-white sm:text-4xl">ФитКал Тракер</h1>
+          <p class="mt-2 text-slate-300">Следи тренировъчния си график и прогрес.</p>
         </div>
-        <nav class="flex flex-wrap gap-3" aria-label="Основни секции">
-          <button data-view="workout" class="nav-tab">Тренировка</button>
-          <button data-view="program" class="nav-tab">Програма</button>
-          <button data-view="history" class="nav-tab">История</button>
-          <button data-view="stats" class="nav-tab">Статистики</button>
-          <button data-view="coach" class="nav-tab">AI треньор</button>
-        </nav>
+        <div class="flex flex-wrap gap-3">
+          <button
+            id="expand-all"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-emerald-400 hover:text-white"
+            type="button"
+          >
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1Z"
+              />
+            </svg>
+            Разгъни всички
+          </button>
+          <button
+            id="collapse-all"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-amber-300 hover:text-white"
+            type="button"
+          >
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M4 9a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"
+              />
+            </svg>
+            Свий всички
+          </button>
+          <button
+            id="reset-button"
+            class="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-300/30 transition hover:bg-emerald-400/20"
+            type="button"
+          >
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M4.75 5.75a.75.75 0 0 1 1.5 0v.69l.22-.22a6.5 6.5 0 1 1-1.06 7.59.75.75 0 0 1 1.37-.59 5 5 0 1 0 .73-5.94l.2-.2h.69a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1-.75-.75V5.75Z"
+              />
+            </svg>
+            Изчисти отметките
+          </button>
+        </div>
       </header>
 
-      <main id="app" class="mt-8 flex-1"></main>
-    </div>
+      <section id="schedule" class="mt-8 grid gap-6"></section>
+    </main>
 
     <script type="module" src="./src/app.js"></script>
   </body>
